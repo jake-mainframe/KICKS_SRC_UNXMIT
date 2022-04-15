@@ -1,0 +1,25 @@
+ /////////////////////////////////////////////////////////////////////
+ // 'KICKS for TSO' is a product to deliver 'CICS like' functionality
+ // in MVS/TSO. Its CICS functionality is delivered at the source code
+ // level, not at the object code level. Applications must be
+ // recompiled and the recompiled programs are not compatible with any
+ // known version of 'real' CICS (the IBM program product),
+ //
+ // © Copyright 2008-2014, Michael Noel, All Rights Reserved.
+ //
+ // Usage of 'KICKS for TSO' is in all cases subject to license. See
+ // http://www.kicksfortso.com
+ // for most current information regarding licensing options..
+ ////////1/////////2/////////3/////////4/////////5/////////6/////////7
+
+void Do_ROUTE() {
+// allows BMS messages to be routed to multiple terminals
+// EXEC CICS ROUTE ÝLIST(data-area)¨ ÝOPCLASS(data-area)¨
+//       ÝINTERVAL(hhmmss) | AFTER ÝHOURS(hh)¨ ÝMINUTES(mm)¨ ÝSECONDS(ss)¨ |
+//        AT ÝHOURS(hh)¨ ÝMINUTES(mm)¨ ÝSECONDS(ss)¨¨ ÝERRTERM{(name)¨¨
+//       ÝTITLE(data-area)¨ ÝREQID(name)¨ ÝNLEOM¨ END-EXEC.
+char errÝ100¨;
+sprintf(err, " %s not yet implemented!", blk_op1);
+prt_error(err, 8);
+No_Code();
+}

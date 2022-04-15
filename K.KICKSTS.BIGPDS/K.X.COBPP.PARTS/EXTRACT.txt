@@ -1,0 +1,38 @@
+ /////////////////////////////////////////////////////////////////////
+ // 'KICKS for TSO' is a product to deliver 'CICS like' functionality
+ // in MVS/TSO. Its CICS functionality is delivered at the source code
+ // level, not at the object code level. Applications must be
+ // recompiled and the recompiled programs are not compatible with any
+ // known version of 'real' CICS (the IBM program product),
+ //
+ // © Copyright 2008-2014, Michael Noel, All Rights Reserved.
+ //
+ // Usage of 'KICKS for TSO' is in all cases subject to license. See
+ // http://www.kicksfortso.com
+ // for most current information regarding licensing options..
+ ////////1/////////2/////////3/////////4/////////5/////////6/////////7
+
+void Do_EXTRACT() {
+// retrieve values from an ATTACH FMH
+// EXEC CICS EXTRACT ATTACH ÝATTACHID(name) | CONVID(name) | SESSION(name)¨
+//       ÝPROCESS(name)¨ ÝRESOURCE(name)¨ ÝRPROCESS(name)¨ ÝRRESOURCE(name)¨
+//       ÝQUEUE(name)¨ ÝIUTYPE(data-value)¨ ÝDATASTR(data-value)¨
+//       ÝRECFM(data-value)¨ END-EXEC.
+// -- or --
+// determine the current state of an MRO or APPC conversation
+// EXEC CICS EXTRACT ATTRIBUTES ÝCONVID(name) | SESSION(name)¨
+//       ÝSTATE(data-value)¨ END-EXEC.
+// -- or --
+// used in a back end program to obtain information passed
+// via the CONNECT PROCESS
+//       command in the front end program
+// EXEC CICS EXTRACT PROCESS ÝCONVID(name) | SESSION(name)¨
+//       ÝPROCNAME(data-value)PROCLENGTH(data-area) ÝMAXPROCLEN(data-value)¨¨
+//       ÝSYNCLEVEL(data-area)¨ ÝPIPLIST(data-area)
+//       PIPLENGTH(data-value)¨ END-EXEC.
+char errÝ100¨;
+sprintf(err,
+" %s %s not yet implemented!", blk_op1, blk_op2);
+prt_error(err, 8);
+No_Code();
+}
